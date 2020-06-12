@@ -25,8 +25,8 @@ public class BookDetails {
 
     @Override
     public String toString() {
-        return "Book: " + name  + "\n"+
-                "Author: " + author  + "\n"+
+        return "Book: " + name  + ";" +"\n"+
+                "Author: " + author  + ";"+"\n"+
                 "Place: " + place;
     }
 }
