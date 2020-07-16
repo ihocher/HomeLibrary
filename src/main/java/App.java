@@ -86,14 +86,14 @@ public class App {
 
         ArrayList<BookDetails> arrBd = base.getBd();
         if(arrBd.size()==0){
-            win.setResult("Книга не найдена");
+            win.setResult("There is no such book.");
         }else{
         win.setResult(String.valueOf(arrBd.get(0)));}
         long endTime = System.currentTimeMillis();
 
         System.out.println("Time for getting info from base: " + (endTime - startTime));
 
-        System.out.println("Проверка");
+        System.out.println("Checking...");
         System.out.println(mLis.getString());
 
 

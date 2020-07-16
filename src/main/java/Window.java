@@ -58,20 +58,17 @@ public class Window extends ListenToMe {
 
         public void actionPerformed(ActionEvent event) {
 
-                if (event.getSource() == Window.this.button || event.getSource() == Window.this.field) {
-
+                if ( event.getSource() == Window.this.field || event.getSource() == Window.this.button) {
                         Window.this.reqText = field.getText();
                         Window.this.setVariable(Window.this.reqText);
                         try {
                             //Need to change waiting instrument
-                            Thread.sleep(1000);
+                            Thread.sleep(1200);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                         Window.this.resultLabel.setText(Window.this.result);
                         result = "";
-
-
                 }
             }
 
