@@ -10,6 +10,7 @@ public class Window extends ListenToMe {
     JTextField field;
     JLabel label;
     JButton button;
+    JButton buttonReset;
     JTextArea resultLabel;
 
     Window() {
@@ -35,6 +36,11 @@ public class Window extends ListenToMe {
         this.button.setLocation(350, 10);
         this.frame.add(this.button);
 
+        this.buttonReset = new JButton("reset");
+        this.buttonReset.setSize(this.button.getSize());
+        this.buttonReset.setLocation(350,40);
+        this.frame.add(this.buttonReset);
+
         this.resultLabel = new JTextArea();
         this.resultLabel.setSize(170, 80);
         this.resultLabel.setLocation(150, 100);
@@ -44,8 +50,6 @@ public class Window extends ListenToMe {
         this.field.addActionListener(handler);
         this.button.addActionListener(handler);
         this.frame.setVisible(true);
-
-
     }
 
     public void setResult(String result) {
@@ -55,9 +59,7 @@ public class Window extends ListenToMe {
     private class theHandler implements ActionListener {
         private theHandler() {
         }
-
         public void actionPerformed(ActionEvent event) {
-
                 if ( event.getSource() == Window.this.field || event.getSource() == Window.this.button) {
                         Window.this.reqText = field.getText();
                         Window.this.setVariable(Window.this.reqText);
@@ -67,10 +69,15 @@ public class Window extends ListenToMe {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+
                         Window.this.resultLabel.setText(Window.this.result);
                         result = "";
+                }else if(event.getSource() == Window.this.buttonReset){
+                    Window.this.reqText = "";
+                    Window.this.setVariable(Window.this.reqText);
+                    Window.this.resultLabel.setText(Window.this.reqText);
+                    Window.this.setResult(reqText);
                 }
             }
-
     }
 }
