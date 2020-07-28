@@ -19,10 +19,12 @@ public class App {
         }
 
         long startTime = System.currentTimeMillis();
+
         GetBase base = new GetBase(mLis.getString());
+
         try{
-        base.start();
-        base.join();}
+                base.start();
+                base.join();}
         catch(Exception e){
         }
 
@@ -31,10 +33,12 @@ public class App {
             win.setResult("There is no such book.");
         }else{
         win.setResult(String.valueOf(arrBd.get(0)));}
+
         long endTime = System.currentTimeMillis();
 
-        System.out.println("Time for getting info from base: " + (endTime - startTime));
 
+        //Checking processes
+        System.out.println("Time for getting info from base: " + (endTime - startTime));
         System.out.println("Checking...");
         System.out.println(mLis.getString());
     }
