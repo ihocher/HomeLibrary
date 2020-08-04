@@ -39,7 +39,7 @@ public class App {
 
         //Checking processes
         System.out.println("Time for getting info from base: " + (endTime - startTime));
-        System.out.println("Checking...");
-        System.out.println(mLis.getString());
+        //System.out.println("Checking...");
+        //System.out.println(mLis.getString());
     }
 }

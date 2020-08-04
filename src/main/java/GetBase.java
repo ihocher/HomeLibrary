@@ -30,6 +30,7 @@ public class GetBase extends Thread {
 
 
     }
+
     //Add exception to each method where it needed to catch all of it
     public void getBase() throws SQLException {
         DBconnection dbCon = new DBconnection();
@@ -42,8 +43,8 @@ public class GetBase extends Thread {
 
         Statement myStmt = dbCon.getStatement();
         sqlFull = "select *from mydbtest.books where name = " + "'" + sqlShort + "'";
-        System.out.println("SqlShort: " + sqlShort);
-        System.out.println("SqlFull: " + sqlFull);
+        //System.out.println("SqlShort: " + sqlShort);
+        //System.out.println("SqlFull: " + sqlFull);
         ResultSet rs = myStmt.executeQuery(sqlFull);
 
         bd = new ArrayList<BookDetails>();
@@ -54,7 +55,7 @@ public class GetBase extends Thread {
             bd.add(bookD);
             }
 
-        //Check change of array
+        //Check changes of array
         System.out.println("Array size is " + bd.size());
 
         dbCon.closeConnection();

@@ -65,10 +65,11 @@ public class Window extends ListenToMe {
                         Window.this.setVariable(Window.this.reqText);
                         boolean done = false;
 
+                        //Waiting for a request from SQL database
                         while(!done){
                             if(Window.this.result != null){
                                 Window.this.resultLabel.setText(Window.this.result);
-                                System.out.println("Result of request: " + Window.this.result);
+                                //System.out.println("Result of request: " + Window.this.result);
                                 done = true;
                             }else{
                                 try {
