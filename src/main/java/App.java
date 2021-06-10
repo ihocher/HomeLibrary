@@ -10,7 +10,7 @@ public class App {
         Window win = new Window();
 
         while(true) {
-            //Main code
+
             MyListener mLis = new MyListener();
 
             win.addListener(mLis);
@@ -41,10 +41,10 @@ public class App {
             long endTime = System.currentTimeMillis();
 
 
-            //Checking time of operation
+            //Checking time of the operation
             System.out.println("Time for getting info from base: " + (endTime - startTime));
 
-            if(win.result != null)
+            if(win.getResult() != null)
                 continue;
 
         }

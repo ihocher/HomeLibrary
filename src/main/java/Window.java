@@ -4,14 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Window extends ListenToMe {
-    String reqText ;
-    String result;
-    JFrame frame = new JFrame("Bookshelf");
-    JTextField field;
-    JLabel label;
-    JButton button;
-    JButton buttonReset;
-    JTextArea resultLabel;
+    private String reqText ;
+    private String result;
+    private JFrame frame = new JFrame("Bookshelf");
+    private JTextField field;
+    private JLabel label;
+    private JButton button;
+    private JButton buttonReset;
+    private JTextArea resultLabel;
 
     Window() {
         frame.setSize(500, 300);
@@ -107,6 +107,7 @@ public class Window extends ListenToMe {
         this.result = result;
     }
 
-
-
+    public String getResult() {
+        return result;
+    }
 }

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 public class GetBase extends Thread {
 
 
-
-    //Need to change sql request for more appropriate variant
     private volatile String sqlShort;
     private String sqlFull ;
     private ArrayList<BookDetails> bd;
@@ -31,7 +29,6 @@ public class GetBase extends Thread {
 
     }
 
-    //Add exception to each method where it needed to catch all of it
     public void getBase() throws SQLException {
         DBconnection dbCon = new DBconnection();
 
@@ -43,8 +40,6 @@ public class GetBase extends Thread {
 
         Statement myStmt = dbCon.getStatement();
         sqlFull = "select *from mydbtest.books where name = " + "'" + sqlShort + "'";
-        //System.out.println("SqlShort: " + sqlShort);
-        //System.out.println("SqlFull: " + sqlFull);
         ResultSet rs = myStmt.executeQuery(sqlFull);
 
         bd = new ArrayList<BookDetails>();
