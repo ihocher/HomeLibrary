@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class GetBase extends Thread {
 
-
     private volatile String sqlShort;
     private String sqlFull ;
     private ArrayList<BookDetails> bd;
@@ -19,14 +18,11 @@ public class GetBase extends Thread {
     }
 
     public void run(){
-
         try {
             getBase();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void getBase() throws SQLException {
@@ -49,9 +45,6 @@ public class GetBase extends Thread {
             bookD =new BookDetails(rs.getString("name" ),rs.getString("author"),rs.getString("place"));
             bd.add(bookD);
             }
-
-        //Check changes of array
-        System.out.println("Array size is " + bd.size());
 
         dbCon.closeConnection();
     }

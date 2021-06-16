@@ -49,14 +49,10 @@ public class Window extends ListenToMe {
         field.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("ActionPerformed started");
 
                 Window.this.reqText = field.getText();
                 Window.this.setVariable(Window.this.reqText);
                 boolean done = false;
-
-                System.out.println("done -" + done);
-                System.out.println(result);
 
                 //Waiting for a request from SQL database
                 while(!done){

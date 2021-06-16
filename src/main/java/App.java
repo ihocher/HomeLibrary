@@ -20,15 +20,12 @@ public class App {
             } catch (Exception e) {
             }
 
-            long startTime = System.currentTimeMillis();
-
             GetBase base = new GetBase(mLis.getString());
 
             try {
                 base.start();
                 base.join();
-                System.out.println("base join");
-            } catch (Exception e) {
+                } catch (Exception e) {
             }
 
             ArrayList<BookDetails> arrBd = base.getBd();
@@ -38,19 +35,7 @@ public class App {
                 win.setResult(String.valueOf(arrBd.get(0)));
             }
 
-            long endTime = System.currentTimeMillis();
-
-
-            //Checking time of the operation
-            System.out.println("Time for getting info from base: " + (endTime - startTime));
-
-            if(win.getResult() != null)
-                continue;
 
         }
-
-
-
-
     }
 }
